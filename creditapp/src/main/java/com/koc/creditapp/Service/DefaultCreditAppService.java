@@ -19,7 +19,27 @@ public class DefaultCreditAppService  implements CreditApplicationService{
 
     @Override
     public CreditAppResponse checkCreditAppCandidate(CreditAppRequest request) {
-        return null;
+        final BigDecimal creditScore = CreditScoreService.getCreditScore(request.getIdentityNo());
+
+        final Boolean status = checkCreditAppStatus(creditScore);
+        if (!status)
+            return CreditAppResponse
+                    .builder()
+                    .isSuccessful(false)
+                    .message(Constants.CREDIT_APP_UNSUCCESSFUL_RESPONSE)
+                    .build();
+
+        return CreditAppResponse.builder()
+                .message(Constants.CREDIT_APP_SUCCESSFUL_RESPONSE)
+                .isSuccessful(true)
+                .build();
+    }
+
+    private Boolean checkCreditAppStatus(final BigDecimal creditScore) {
+        if (creditScore.compareTo(Constants.MIN_CREDIT) < 0)
+            return Boolean.FALSE;
+
+        return Boolean.TRUE;
     }
 
     @Override
