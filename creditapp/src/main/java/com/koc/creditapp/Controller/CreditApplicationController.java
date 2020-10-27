@@ -13,7 +13,7 @@ public class CreditApplicationController {
     @Autowired
     private CreditApplicationService creditApplicationService;
 
-    @RequestMapping(value = "/creditapplication/confirmation", method = RequestMethod.POST)
+    @RequestMapping(value = "/creditapplication/confirmation", method = { RequestMethod.GET })
     public ResponseEntity creditCandidateCheck(@RequestBody CreditAppRequest creditAppRequest){
         return ResponseEntity.ok(creditApplicationService.checkCreditAppCandidate(creditAppRequest));
     }
