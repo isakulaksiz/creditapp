@@ -1,5 +1,7 @@
 package com.koc.creditapp.Service;
 
-public class CreditApplicationService {
-
+import com.koc.creditapp.Entities.Candidate;
+import com.koc.creditapp.Model.CreditAppRequest;
+import com.koc.creditapp.Model.CreditAppResponse;
+public interface CreditApplicationService {
 }

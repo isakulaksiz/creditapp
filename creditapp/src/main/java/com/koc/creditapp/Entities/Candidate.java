@@ -1,5 +1,6 @@
 package com.koc.creditapp.Entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,19 +13,19 @@ public class Candidate {
     @GeneratedValue
     public Integer id;
 
-    @GeneratedValue(name="IDENTITY_NO")
+    @Column(name="IDENTITY_NO")
     private String identityNo;
 
-    @GeneratedValue(name="NAME")
+    @Column(name="NAME")
     private String name;
 
-    @GeneratedValue(name="SURNAME")
+    @Column(name="SURNAME")
     private String surname;
 
-    @GeneratedValue(name="INCOME")
+    @Column(name="INCOME")
     private BigDecimal income;
 
-    @GeneratedValue(name="LIMIT")
+    @Column(name="LIMIT")
     private BigDecimal limit;
 
     public Integer getId() {
