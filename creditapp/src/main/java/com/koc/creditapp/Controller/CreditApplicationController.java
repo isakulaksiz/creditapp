@@ -9,5 +9,17 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CreditApplicationController {
+    // Dependency Inj-Singleton Design
+    @Autowired
+    private CreditApplicationService creditApplicationService;
 
+    @RequestMapping(value = "/creditapplication/confirmation", method = RequestMethod.POST)
+    public ResponseEntity creditCandidateCheck(@RequestBody CreditAppRequest creditAppRequest){
+        return ResponseEntity.ok(creditApplicationService.checkCreditAppCandidate(creditAppRequest));
+    }
+
+    @GetMapping("/getcandidates")
+    Iterable<Candidate> all(){
+        return creditApplicationService.findAll();
+    }
 }
