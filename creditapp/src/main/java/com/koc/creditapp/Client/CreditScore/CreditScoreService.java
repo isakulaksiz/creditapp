@@ -1,4 +1,4 @@
-package com.koc.creditapp.Client;
+package com.koc.creditapp.Client.CreditScore;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ public class CreditScoreService {
     static {
         creditScore.put("",BigDecimal.valueOf(200));
         creditScore.put("",BigDecimal.valueOf(400));
-        creditScore.put("",BigDecimal.valueOf(500));
+        creditScore.put("",BigDecimal.valueOf(1000));
         creditScore.put("",BigDecimal.valueOf(900));
     }
 

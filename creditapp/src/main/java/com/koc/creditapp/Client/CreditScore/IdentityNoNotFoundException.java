@@ -1,4 +1,4 @@
-package com.koc.creditapp.Client;
+package com.koc.creditapp.Client.CreditScore;
 
 public class IdentityNoNotFoundException extends IllegalArgumentException{
     public final String message;
